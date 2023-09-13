@@ -1,3 +1,6 @@
 streamlit
 nltk
-sci-kit learn
+scikit-learn
+fastapi
+uvicorn
+numpy
