@@ -65,7 +65,8 @@ input_sms = st.text_area("Enter SMS text here:", "")
 
 empty_str = ''
 
-if st.button('Predict', type='primary'):
+with st.form(clear_on_submit = True):
+    if st.button('Predict', type='primary'):
         # 1. Preprocess
         transformed_sms = transform_text(input_sms)
         
@@ -82,8 +83,8 @@ if st.button('Predict', type='primary'):
             st.header("Not Spam")
 
         # Clear the content of the text_area widget by assigning an empty string
-elif st.button('Clear'):
-        input_sms = empty()
+# elif st.button('Clear'):
+#         input_sms = empty()
 
 if __name__ == '__main__':
     main()
