@@ -80,7 +80,7 @@ def main():
             st.header("Not Spam")
     
     elif st.button('Clear'):
-    input_sms = st.text_area("Enter SMS text here:", "")
+        input_sms = st.text_area("Enter SMS text here:", "")
 
 if __name__ == '__main__':
     main()     
