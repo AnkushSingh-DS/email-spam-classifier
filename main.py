@@ -65,7 +65,7 @@ input_sms = st.text_area("Enter SMS text here:", "")
 
 empty_str = ''
 
-with st.form(clear_on_submit = True):
+with st.form(key = 1, clear_on_submit = True):
     if st.button('Predict', type='primary'):
         # 1. Preprocess
         transformed_sms = transform_text(input_sms)
