@@ -63,7 +63,9 @@ def main():
     # Create a text input field for the user to enter SMS text
 input_sms = st.text_area("Enter SMS text here:", "")
 
- if st.button('Predict', type='primary'):
+empty_str = ''
+
+if st.button('Predict', type='primary'):
         # 1. Preprocess
         transformed_sms = transform_text(input_sms)
         
@@ -80,7 +82,7 @@ input_sms = st.text_area("Enter SMS text here:", "")
             st.header("Not Spam")
 
         # Clear the content of the text_area widget by assigning an empty string
-        input_sms = ""
+        input_sms = "empty_str"
 
 if __name__ == '__main__':
     main()
