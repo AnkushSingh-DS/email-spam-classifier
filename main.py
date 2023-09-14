@@ -40,6 +40,8 @@ model = pickle.load(open('model.pkl','rb'))
 st.title("Email/SMS Spam Classifier")
 
 input_sms = st.text_area("Enter the message")
+if st.button('Clear'):
+    input_sms.empty()
 
 if st.button('Predict'):
 
@@ -55,5 +57,5 @@ if st.button('Predict'):
       else:
           st.header("Not Spam")
 if st.button('Clear'):
-    result = input_sms.empty()
+    input_sms.empty()
      
