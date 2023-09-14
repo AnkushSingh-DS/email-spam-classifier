@@ -63,7 +63,7 @@ def main():
     # Create a text input field for the user to enter SMS text
 input_sms = st.text_area("Enter SMS text here:", "")
 
-    if st.button('Predict', type='primary'):
+if st.button('Predict', type='primary'):
         # 1. Preprocess
         transformed_sms = transform_text(input_sms)
         
