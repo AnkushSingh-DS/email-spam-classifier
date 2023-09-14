@@ -41,7 +41,7 @@ st.title("Email/SMS Spam Classifier")
 
 input_sms = st.text_area("Enter the message")
 
-  for st.button('Predict'):
+  if st.button('Predict'):
 
     # 1. preprocess
       transformed_sms = transform_text(input_sms)
