@@ -61,7 +61,7 @@ def main():
     st.sidebar.header("User Input")
 
     # Create a text input field for the user to enter SMS text
-    input_sms = st.text_area("Enter SMS text here:", "")
+    input_sms = st.text_area("Enter SMS text here:", key=text_area_key)
 
     if st.button('Predict', type='primary'):
         # 1. Preprocess
@@ -80,7 +80,8 @@ def main():
             st.header("Not Spam")
     
     elif st.button('Clear'):
-        input_sms = st.text_area("Enter SMS text here:", "")
+        # Clear the content of the text_area widget
+        st.text_area("Enter SMS text here:", value="", key=text_area_key)
 
 if __name__ == '__main__':
-    main()     
+    main()
