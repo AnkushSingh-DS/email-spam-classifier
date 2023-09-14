@@ -83,7 +83,7 @@ if st.button('Predict', type='primary'):
 
         # Clear the content of the text_area widget by assigning an empty string
 elif st.button('Clear'):
-        input_sms = None
+        input_sms = empty()
 
 if __name__ == '__main__':
     main()
