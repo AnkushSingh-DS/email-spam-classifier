@@ -55,4 +55,4 @@ if st.button('Predict'):
       else:
           st.header("Not Spam")
 if st.button('Clear'):
-     input[st.text_area] = clear()
+     input_sms[st.text_area] = clear()
