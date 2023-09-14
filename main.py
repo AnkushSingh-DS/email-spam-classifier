@@ -81,7 +81,7 @@ def main():
     
     elif st.button('Clear'):
         # Clear the content of the text_area widget
-        st.text_area("Enter SMS text here:", value="", key=1)
+        st.text_area("Enter SMS text here:", value="", key=2)
 
 if __name__ == '__main__':
     main()
