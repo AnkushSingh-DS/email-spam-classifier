@@ -4,16 +4,23 @@ import string
 import nltk
 from nltk.stem.porter import PorterStemmer
 
-# Download required NLTK data (only runs once)
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
+# Download required NLTK data at startup
+@st.cache_resource
+def download_nltk_data():
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt', quiet=True)
+    
+    try:
+        nltk.data.find('tokenizers/punkt_tab')
+    except LookupError:
+        nltk.download('punkt_tab', quiet=True)
+    
+    return True
 
-try:
-    nltk.data.find('tokenizers/punkt_tab')
-except LookupError:
-    nltk.download('punkt_tab')
+# Call the download function
+download_nltk_data()
 
 # Minimal stopwords list
 stopwords = set([
