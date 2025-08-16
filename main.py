@@ -3,7 +3,7 @@ import pickle
 import string
 from nltk.stem.porter import PorterStemmer
 
-# Define a simple stopwords list (so we don't need nltk.download)
+# Minimal stopwords list (no nltk.download required)
 stopwords = set([
     "i","me","my","myself","we","our","ours","ourselves","you","your","yours",
     "yourself","yourselves","he","him","his","himself","she","her","hers",
@@ -26,17 +26,17 @@ def transform_text(text):
     # Lowercase
     text = text.lower()
 
-    # Simple tokenization (split by spaces and punctuation removal)
+    # Tokenize by splitting (instead of nltk.word_tokenize)
     tokens = []
-    for ch in text.split():
-        word = ch.strip(string.punctuation)
+    for word in text.split():
+        word = word.strip(string.punctuation)
         if word:
             tokens.append(word)
 
-    # Remove stopwords + stemming
+    # Remove stopwords + non-alphanumeric + stemming
     filtered = []
     for w in tokens:
-        if w not in stopwords and w.isalnum():
+        if w.isalnum() and w not in stopwords:
             filtered.append(ps.stem(w))
 
     return " ".join(filtered)
